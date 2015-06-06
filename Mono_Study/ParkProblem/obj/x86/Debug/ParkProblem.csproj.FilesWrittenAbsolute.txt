@@ -3,3 +3,8 @@
 /Users/twer/Projects/Mono_Study/ParkProblem/bin/Debug/ParkProblem.exe
 /Users/twer/Projects/Mono_Study/ParkProblem/obj/x86/Debug/ParkProblem.exe
 /Users/twer/Projects/Mono_Study/ParkProblem/obj/x86/Debug/ParkProblem.exe.mdb
+/Users/twer/Documents/MyGitRepos/Cuiyansong/mono-studio-practice.git/Mono_Study/ParkProblem/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/twer/Documents/MyGitRepos/Cuiyansong/mono-studio-practice.git/Mono_Study/ParkProblem/bin/Debug/ParkProblem.exe.mdb
+/Users/twer/Documents/MyGitRepos/Cuiyansong/mono-studio-practice.git/Mono_Study/ParkProblem/bin/Debug/ParkProblem.exe
+/Users/twer/Documents/MyGitRepos/Cuiyansong/mono-studio-practice.git/Mono_Study/ParkProblem/obj/x86/Debug/ParkProblem.exe
+/Users/twer/Documents/MyGitRepos/Cuiyansong/mono-studio-practice.git/Mono_Study/ParkProblem/obj/x86/Debug/ParkProblem.exe.mdb
