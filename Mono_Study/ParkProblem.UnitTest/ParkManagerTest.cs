@@ -7,16 +7,30 @@ namespace ParkProblem.UnitTest
 	public class ParkManagerTest
 	{
 		[Test ()]
-		public void  Should_take_out_my_car_when_I_have_parked_my_car ()
+		public void  Should_park_car_success_when_parklot_has_space ()
 		{
 			var park = new Parklot ();
 			var myCar = new Car ("123");
-			var parkBoy = new ParkBoy (park);
+			var parkManager = new ParkManager (park);
 
-			park.ParkIn (myCar);
+			parkManager.ParkIn (myCar);
 
-			Assert.True (myCar.Equals (parkBoy.TakeOut ("123")));
+			Assert.True (myCar.Equals (parkManager.TakeOut ("123")));
 		}
+
+		[Test ()]
+		public void Should_park_car_fail_when_parklot_has_no_space ()
+		{
+			var park = new Parklot (1);
+			park.ParkIn (new Car ("Full"));
+			var myCar = new Car ("123");
+			var parkManager = new ParkManager (park);
+
+			bool isParkIn = parkManager.ParkIn (myCar);
+
+			Assert.True (isParkIn == false);
+		}
+
 	}
 }
 
