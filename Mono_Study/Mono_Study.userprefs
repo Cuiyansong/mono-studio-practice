@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="ParkProblem.UnitTest/ParkProblem.UnitTest.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ParkProblem/ParkBoy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ParkProblem/SmartBoy.cs">
     <Files>
-      <File FileName="ParkProblem.UnitTest/ParkBoyTest.cs" Line="26" Column="37" />
-      <File FileName="ParkProblem/ParkBoy.cs" Line="19" Column="3" />
-      <File FileName="ParkProblem/Parklot.cs" Line="11" Column="3" />
-      <File FileName="ParkProblem/Car.cs" Line="11" Column="1" />
+      <File FileName="ParkProblem/ParkManager.cs" Line="30" Column="4" />
+      <File FileName="ParkProblem/ParkingBase.cs" Line="5" Column="22" />
+      <File FileName="ParkProblem.UnitTest/ParkManagerTest.cs" Line="14" Column="32" />
+      <File FileName="ParkProblem/SmartBoy.cs" Line="9" Column="4" />
+      <File FileName="ParkProblem/SuperBoy.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
