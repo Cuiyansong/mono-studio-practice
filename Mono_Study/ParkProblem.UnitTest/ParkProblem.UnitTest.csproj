@@ -38,6 +38,7 @@
     <Compile Include="ParkinglotTest.cs" />
     <Compile Include="SmartBoyTest.cs" />
     <Compile Include="SuperBoyTest.cs" />
+    <Compile Include="ParkManagerTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -1,3 +1,8 @@
 # gitignore should be put here.
 
+.mdb
 
+bin/debug/
+bin/release/
+obj/debug/
+obj/release/
