@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ParkProblem
 {
-	public class ParkBoy: ParkBoyBase
+	public class ParkBoy: ParkingBase
 	{
 		public ParkBoy()
 		{

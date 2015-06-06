@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace ParkProblem
 {
-	public class ParkManager:ParkBoyBase
+	public class ParkManager:ParkingBase
 	{
-		private List<ParkBoyBase> boys = new List<ParkBoyBase> ();
+		private List<ParkingBase> boys = new List<ParkingBase> ();
 
 		public ParkManager ()
 		{
@@ -40,9 +40,9 @@ namespace ParkProblem
 			return base.TakeOut (id);
 		}
 
-		public void AddParkBoy (ParkBoyBase boy)
+		public void AddParkBoy (ParkingBase boy)
 		{
-			boy.AddParklots (this.parklots);
+			boy.AddParklots (new Parklot());
 			boys.Add (boy);
 		}
 	}

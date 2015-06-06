@@ -41,9 +41,9 @@
     <Compile Include="Parklot.cs" />
     <Compile Include="SmartBoy.cs" />
     <Compile Include="SuperBoy.cs" />
-    <Compile Include="ParkBoyBase.cs" />
     <Compile Include="CompareEx.cs" />
     <Compile Include="ParkManager.cs" />
+    <Compile Include="ParkingBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
