@@ -1,0 +1,8 @@
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/bin/Debug/ParkProblem.UnitTest.dll.mdb
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/bin/Debug/ParkProblem.UnitTest.dll
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/obj/Debug/ParkProblem.UnitTest.dll
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/obj/Debug/ParkProblem.UnitTest.dll.mdb
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/bin/Debug/nunit.framework.dll
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/bin/Debug/ParkProblem.exe
+/Users/twer/Projects/Mono_Study/ParkProblem.UnitTest/bin/Debug/ParkProblem.exe.mdb
