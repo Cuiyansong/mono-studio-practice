@@ -23,6 +23,11 @@ namespace ParkProblem
 			parklots.Sort (CompareFunc.AsCompare());
 			return	parklots [0].ParkIn (car); 
 		}
+
+		public void AddParklots(List<Parklot> parks)
+		{
+			this.parklots.AddRange (parks);
+		}
 	}
 }
 

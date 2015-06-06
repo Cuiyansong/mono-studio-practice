@@ -7,18 +7,6 @@ namespace ParkProblem.UnitTest
 	public class ParkManagerTest
 	{
 		[Test ()]
-		public void  Should_park_car_success_when_parklot_has_space ()
-		{
-			var park = new Parklot ();
-			var myCar = new Car ("123");
-			var parkManager = new ParkManager (park);
-
-			parkManager.ParkIn (myCar);
-
-			Assert.True (myCar.Equals (parkManager.TakeOut ("123")));
-		}
-
-		[Test ()]
 		public void Should_park_car_fail_when_parklot_has_no_space ()
 		{
 			var park = new Parklot (1);
@@ -31,6 +19,47 @@ namespace ParkProblem.UnitTest
 			Assert.True (isParkIn == false);
 		}
 
+		[Test ()]
+		public void  Should_park_car_success_when_parklot_has_space ()
+		{
+			var park = new Parklot ();
+			var myCar = new Car ("123");
+			var parkManager = new ParkManager (park);
+
+			parkManager.ParkIn (myCar);
+
+			Assert.True (myCar.Equals (parkManager.TakeOut ("123")));
+		}
+
+		[Test ()]
+		public void Should_park_car_fail_when_parklot_has_no_space_and_has_parkboy ()
+		{
+			var park = new Parklot (1);
+			park.ParkIn (new Car ("Full"));
+			var myCar = new Car ("123");
+			var parkManager = new ParkManager (park);
+			var parkBoy = new ParkBoy ();
+			parkManager.AddParkBoy (parkBoy);
+
+			bool isParkIn = parkManager.ParkIn (myCar);
+
+			Assert.True (isParkIn == false);
+		}
+
+		[Test ()]
+		public void Should_park_car_success_when_parklot_has_space_and_has_parkboy ()
+		{
+			var park = new Parklot ();
+			park.ParkIn (new Car ("Full"));
+			var myCar = new Car ("123");
+			var parkManager = new ParkManager (park);
+			var parkBoy = new ParkBoy ();
+			parkManager.AddParkBoy (parkBoy);
+
+			parkManager.ParkIn (myCar);
+
+			Assert.True (myCar.Equals (parkManager.TakeOut ("123")));
+		}
 	}
 }
 
