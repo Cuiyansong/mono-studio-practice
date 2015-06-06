@@ -42,7 +42,7 @@ namespace ParkProblem
 
 		public void AddParkBoy (ParkingBase boy)
 		{
-			boy.AddParklots (new Parklot());
+			boy.AddParklots (this.parklots);
 			boys.Add (boy);
 		}
 	}
