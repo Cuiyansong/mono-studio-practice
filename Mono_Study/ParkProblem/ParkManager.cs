@@ -47,11 +47,11 @@ namespace ParkProblem
 
 		public override string Print (string prefix)
 		{
-			string result = GetParkInfoByBoy ();
+			string result = GetParkNum ();
 
-//			foreach (var lot in parklots) {
-//				result += "\n" + lot.Print ("\t");
-//			}
+			foreach (var lot in parklots) {
+				result += "\n" + lot.Print ("\t");
+			}
 			
 			foreach (var boy in boys) {
 				result += "\n" + boy.Print ("\t");
@@ -62,13 +62,18 @@ namespace ParkProblem
 
 		#region Private Method
 
-		private string GetParkInfoByBoy ()
+		private string GetParkNum ()
 		{
-			if (boys.Count <= 0)
+			if (boys.Count <= 0 && parklots.Count <= 0)
 				return "M 0 0";
 			else {
 				int carNum = 0;
 				int capacityNum = 0;
+
+				foreach (var lot in parklots) {
+					carNum += lot.CarNum;
+					capacityNum += lot.Capacity;
+				}
 
 				foreach (var boy in boys) {
 					carNum += boy.TotoalCars;
