@@ -26,9 +26,8 @@ namespace ParkProblem.UnitTest
 			var myCar = new Car ("123");
 			var parkManager = new ParkManager (park);
 
-			// Assert.True (parkManager.ParkIn (myCar), "Should be park in success");
-			// TODO(Cuiyansong): equal to 0 error
-			// Assert.True (myCar.Equals (parkManager.TakeOut ("123")));
+			 Assert.True (parkManager.ParkIn (myCar), "Should be park in success");
+			 Assert.True (myCar.Equals (parkManager.TakeOut ("123")));
 		}
 
 		[Test ()]

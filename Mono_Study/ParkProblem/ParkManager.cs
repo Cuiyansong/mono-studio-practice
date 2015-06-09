@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ParkProblem
 {
-	public class ParkManager:ParkingBase
+	public class ParkManager:ParkingBase,IPrintable
 	{
 		private List<ParkingBase> boys = new List<ParkingBase> ();
 
@@ -49,11 +49,11 @@ namespace ParkProblem
 		{
 			string result = GetParkNum ();
 
-			foreach (var lot in parklots) {
+			foreach (IPrintable lot in parklots) {
 				result += "\n" + lot.Print ("\t");
 			}
 			
-			foreach (var boy in boys) {
+			foreach (IPrintable boy in boys) {
 				result += "\n" + boy.Print ("\t");
 			}
 

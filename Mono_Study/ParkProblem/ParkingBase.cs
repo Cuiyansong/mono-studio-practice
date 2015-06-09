@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Linq.Expressions;
 
 namespace ParkProblem
 {
-	public abstract class ParkingBase
+	public abstract class ParkingBase:IPrintable
 	{
 		#region Property
 
@@ -12,6 +13,7 @@ namespace ParkProblem
 		/// The parklots.
 		/// </summary>
 		protected List<Parklot> parklots = new List<Parklot> ();
+
 		/// <summary>
 		/// Default compare returen a not empty parklot.
 		/// </summary>
@@ -78,20 +80,14 @@ namespace ParkProblem
 		}
 
 		/// <summary>
-		/// Adds the parklots.
+		/// Print information with specified prefix.
 		/// </summary>
-		/// <param name="parks">Parks.</param>
-		public void AddParklots (IEnumerable<Parklot> parks)
-		{
-			this.parklots.AddRange (parks);
-		}
-
-
+		/// <param name="prefix">Prefix.</param>
 		public virtual string Print (string prefix)
 		{
 			string result = prefix + GetParkInfoByParklot ();
 
-			foreach (var lot in parklots) {
+			foreach (IPrintable lot in parklots) {
 				result += "\n" + prefix + lot.Print ("\t");
 			}
 			return result;

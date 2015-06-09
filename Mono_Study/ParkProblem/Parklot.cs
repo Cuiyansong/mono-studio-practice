@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ParkProblem
 {
-	public class Parklot
+	public class Parklot:IPrintable
 	{
 		private List<Car> cars = new List<Car> ();
 

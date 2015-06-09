@@ -35,7 +35,6 @@ namespace ParkProblem.UnitTest
 			var manager = new ParkManager ();
 			manager.AddParkBoy (boy);
 			var director = new ParkDirector (manager);
-			Console.WriteLine (director.Print ());
 
 			Assert.AreEqual (director.Print (), "M 0 0\n\tB 0 0");
 		}
