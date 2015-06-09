@@ -42,9 +42,44 @@ namespace ParkProblem
 
 		public void AddParkBoy (ParkingBase boy)
 		{
-			boy.AddParklots (this.parklots);
 			boys.Add (boy);
 		}
+
+		public override string Print (string prefix)
+		{
+			string result = GetParkInfoByBoy ();
+
+//			foreach (var lot in parklots) {
+//				result += "\n" + lot.Print ("\t");
+//			}
+			
+			foreach (var boy in boys) {
+				result += "\n" + boy.Print ("\t");
+			}
+
+			return result;
+		}
+
+		#region Private Method
+
+		private string GetParkInfoByBoy ()
+		{
+			if (boys.Count <= 0)
+				return "M 0 0";
+			else {
+				int carNum = 0;
+				int capacityNum = 0;
+
+				foreach (var boy in boys) {
+					carNum += boy.TotoalCars;
+					capacityNum += boy.TotoalCapacity;
+				}
+
+				return string.Format ("M {0} {1}", capacityNum - carNum, capacityNum);
+			}
+		}
+
+		#endregion
 	}
 }
 

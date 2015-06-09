@@ -7,6 +7,7 @@ namespace ParkProblem
 	public abstract class ParkingBase
 	{
 		#region Property
+
 		/// <summary>
 		/// The parklots.
 		/// </summary>
@@ -15,9 +16,43 @@ namespace ParkProblem
 		/// Default compare returen a not empty parklot.
 		/// </summary>
 		protected Func<Parklot,Parklot,int> CompareFunc = (x, y) => x.Capacity - 0;
+
+		#endregion
+
+		#region Public Property
+
+		/// <summary>
+		/// Gets the totoal cars.
+		/// </summary>
+		/// <value>The totoal cars.</value>
+		public virtual int TotoalCars {
+			get {
+				int total = 0;
+				foreach (var item in parklots) {
+					total += item.CarNum;
+				}
+				return total;
+			}
+		}
+
+		/// <summary>
+		/// Gets the totoal capacity.
+		/// </summary>
+		/// <value>The totoal capacity.</value>
+		public virtual int TotoalCapacity {
+			get {
+				int total = 0;
+				foreach (var item in parklots) {
+					total += item.Capacity;
+				}
+				return total;
+			}
+		}
+
 		#endregion
 
 		#region Method
+
 		/// <summary>
 		/// Takes the out.
 		/// </summary>
@@ -27,6 +62,7 @@ namespace ParkProblem
 		{  
 			return this.parklots.Find (x => x.ContainsCar (id)).TakeOut (id);
 		}
+
 		/// <summary>
 		/// Parks the in.
 		/// </summary>
@@ -40,6 +76,7 @@ namespace ParkProblem
 			parklots.Sort (CompareFunc.AsCompare ());
 			return	parklots [0].ParkIn (car); 
 		}
+
 		/// <summary>
 		/// Adds the parklots.
 		/// </summary>
@@ -48,6 +85,43 @@ namespace ParkProblem
 		{
 			this.parklots.AddRange (parks);
 		}
+
+
+		public virtual string Print (string prefix)
+		{
+			string result = prefix + GetParkInfoByParklot ();
+
+			foreach (var lot in parklots) {
+				result += "\n" + prefix + lot.Print ("\t");
+			}
+			return result;
+		}
+
+		#endregion
+
+		#region Private Method
+
+		/// <summary>
+		/// Gets the park info by parklot.
+		/// </summary>
+		/// <returns>The park info by parklot.</returns>
+		private string GetParkInfoByParklot ()
+		{
+			if (parklots.Count <= 0)
+				return "B 0 0";
+			else {
+				int carNum = 0;
+				int capacityNum = 0;
+
+				foreach (var parklot in parklots) {
+					carNum += parklot.CarNum;
+					capacityNum += parklot.Capacity;
+				}
+
+				return string.Format ("B {0} {1}", capacityNum - carNum, capacityNum);
+			}
+		}
+
 		#endregion
 
 	}

@@ -44,6 +44,7 @@
     <Compile Include="CompareEx.cs" />
     <Compile Include="ParkManager.cs" />
     <Compile Include="ParkingBase.cs" />
+    <Compile Include="ParkDirector.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

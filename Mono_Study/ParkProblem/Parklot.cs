@@ -7,26 +7,31 @@ namespace ParkProblem
 	{
 		private List<Car> cars = new List<Car> ();
 
-		public int Capacity { get;private set;}
+		public int Capacity { get; private set; }
 
-		public float VacancyRate
-		{
+		public float VacancyRate {
 			get { return (this.Capacity - cars.Count) / (float)Capacity; }
 		}
 
-		public string ParklotId{ get; set;}
+		public int CarNum {
+			get {
+				return cars.Count;
+			}
+		}
 
-		public Parklot()
+		public string ParklotId{ get; set; }
+
+		public Parklot ()
 		{
 			this.Capacity = 10;
 		}
 
-		public Parklot(int capacity)
+		public Parklot (int capacity)
 		{
 			this.Capacity = capacity;
 		}
 
-		public bool ContainsCar(string id)
+		public bool ContainsCar (string id)
 		{
 			for (int i = 0; i < cars.Count; i++) {
 				if (cars [i].Id.Equals (id)) {
@@ -36,7 +41,7 @@ namespace ParkProblem
 			return false;
 		}
 
-		public bool ParkIn(Car car)
+		public bool ParkIn (Car car)
 		{
 			if (this.cars.Count >= this.Capacity)
 				return false;
@@ -48,12 +53,17 @@ namespace ParkProblem
 
 		public Car TakeOut (string carId)
 		{
-			if (!cars.Exists(x=>x.Id.Equals(carId))) {
+			if (!cars.Exists (x => x.Id.Equals (carId))) {
 				return null;
 			}
 
-			return cars.Find (x => x.Id.Equals(carId));
+			return cars.Find (x => x.Id.Equals (carId));
 		}
-	} 
+
+		public string Print (string prefix)
+		{
+			return string.Format ("{0}P {1} {2}", prefix, Capacity - cars.Count, Capacity);
+		}
+	}
 }
 

@@ -1,16 +1,18 @@
 ﻿<Properties StartupItem="ParkProblem.UnitTest/ParkProblem.UnitTest.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ParkProblem/SmartBoy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ParkProblem/ParkingBase.cs">
     <Files>
-      <File FileName="ParkProblem/ParkManager.cs" Line="30" Column="4" />
-      <File FileName="ParkProblem/ParkingBase.cs" Line="5" Column="22" />
-      <File FileName="ParkProblem.UnitTest/ParkManagerTest.cs" Line="14" Column="32" />
-      <File FileName="ParkProblem/SmartBoy.cs" Line="9" Column="4" />
-      <File FileName="ParkProblem/SuperBoy.cs" Line="1" Column="1" />
+      <File FileName="ParkProblem/ParkManager.cs" Line="34" Column="1" />
+      <File FileName="ParkProblem.UnitTest/ParkManagerTest.cs" Line="29" Column="1" />
+      <File FileName="ParkProblem/ParkingBase.cs" Line="37" Column="24" />
+      <File FileName="ParkProblem/ParkBoy.cs" Line="19" Column="4" />
+      <File FileName="ParkProblem.UnitTest/ParkDirectorTest.cs" Line="27" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/twer/Documents/MyGitRepos/Cuiyansong/mono-studio-practice.git/Mono_Study/ParkProblem.UnitTest/ParkManagerTest.cs" line="29" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
