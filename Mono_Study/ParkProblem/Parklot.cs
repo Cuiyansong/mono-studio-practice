@@ -10,7 +10,9 @@ namespace ParkProblem
 		public int Capacity { get; private set; }
 
 		public float VacancyRate {
-			get { return (this.Capacity - cars.Count) / (float)Capacity; }
+			get { 
+				return (this.Capacity - cars.Count) / (float)Capacity;
+			}
 		}
 
 		public int CarNum {

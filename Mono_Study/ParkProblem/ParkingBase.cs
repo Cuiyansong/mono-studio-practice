@@ -21,6 +21,10 @@ namespace ParkProblem
 
 		#endregion
 
+		#region Constructor
+
+		#endregion
+
 		#region Public Property
 
 		/// <summary>
@@ -54,6 +58,21 @@ namespace ParkProblem
 		#endregion
 
 		#region Method
+		/// <summary>
+		/// Adds the park lot.
+		/// </summary>
+		/// <param name="parklot">Parklot.</param>
+		public virtual void AddParkLot(Parklot parklot){
+			this.AddParkLot (new List<Parklot>{ parklot });
+		}
+
+		/// <summary>
+		/// Adds the park lots.
+		/// </summary>
+		/// <param name="parklots">Parklots.</param>
+		public virtual void AddParkLot(List<Parklot> parklots){
+			this.parklots.AddRange(parklots);
+		}
 
 		/// <summary>
 		/// Takes the out.
@@ -62,6 +81,9 @@ namespace ParkProblem
 		/// <param name="id">Identifier.</param>
 		public virtual Car TakeOut (string id)
 		{  
+			if (parklots.Count == 0)
+				return new Car ("UnKnow");
+
 			return this.parklots.Find (x => x.ContainsCar (id)).TakeOut (id);
 		}
 

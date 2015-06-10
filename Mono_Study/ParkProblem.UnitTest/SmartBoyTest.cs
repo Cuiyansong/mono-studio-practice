@@ -17,7 +17,8 @@ namespace ParkProblem.UnitTest
 			var parklots = new List<Parklot> ();
 			parklots.Add (parkOne);
 			parklots.Add (parkTwo);
-			var parkBoy = new SmartBoy (parklots);
+			var parkBoy = new SmartBoy ();
+			parkBoy.AddParkLot (parklots);
 
 			parkBoy.ParkIn (myCar);
 
@@ -34,7 +35,8 @@ namespace ParkProblem.UnitTest
 			var parklots = new List<Parklot> ();
 			parklots.Add (parkOne);
 			parklots.Add (parkTwo);
-			var parkBoy = new SmartBoy (parklots);
+			var parkBoy = new SmartBoy ();
+			parkBoy.AddParkLot (parklots);
 
 			parkBoy.ParkIn (myCar);
 

@@ -12,7 +12,8 @@ namespace ParkProblem.UnitTest
 		{
 			var park = new Parklot ();
 			var myCar = new Car ("123");
-			var parkBoy = new SuperBoy (park);
+			var parkBoy = new SuperBoy ();
+			parkBoy.AddParkLot (park);
 
 			park.ParkIn (myCar);
 
@@ -24,7 +25,8 @@ namespace ParkProblem.UnitTest
 		{			
 			var park = new Parklot ();
 			var myCar = new Car ("123");			
-			var parkBoy = new SuperBoy (park);
+			var parkBoy = new SuperBoy ();
+			parkBoy.AddParkLot (park);
 
 			parkBoy.ParkIn (myCar);
 
@@ -46,7 +48,8 @@ namespace ParkProblem.UnitTest
 			var parklots = new List<Parklot> ();
 			parklots.Add (park1);
 			parklots.Add (park2);
-			var parkBoy = new SuperBoy (parklots);
+			var parkBoy = new SuperBoy ();
+			parkBoy.AddParkLot (parklots);
 
 			parkBoy.ParkIn (myCar);
 

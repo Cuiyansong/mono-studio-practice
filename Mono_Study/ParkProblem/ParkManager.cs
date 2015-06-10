@@ -12,32 +12,28 @@ namespace ParkProblem
 			base.CompareFunc = (x, y) => x.Capacity - 0;
 		}
 
-		public ParkManager (List<Parklot> parklots) : this ()
-		{
-			this.parklots.AddRange (parklots);
-		}
-
-		public ParkManager (Parklot parklot) : this ()
-		{
-			this.parklots.Add (parklot);
-		}
-
 		public override bool ParkIn (Car car)
 		{
+			bool success = false;
 			if (boys.Count > 0) {
-				return	boys [0].ParkIn (car);
+				success =	boys [0].ParkIn (car);
 			}
-
-			return base.ParkIn (car);
+			if (success)
+				return success;
+			else
+				return base.ParkIn (car);
 		}
 
 		public override Car TakeOut (string id)
 		{
+			Car car = new Car ("UnKnown");
 			if (boys.Count > 0) {
-				return boys [0].TakeOut (id);
+				car = boys [0].TakeOut (id);
 			}
-
-			return base.TakeOut (id);
+			if (car.Id.Equals(id))
+				return car;
+			else
+				return base.TakeOut (id);
 		}
 
 		public void AddParkBoy (ParkingBase boy)

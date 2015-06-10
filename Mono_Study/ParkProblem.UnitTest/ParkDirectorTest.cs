@@ -20,7 +20,8 @@ namespace ParkProblem.UnitTest
 		public void Should_print_log_success_when_manager_have_one_parkBoy_and_parkBoy_has_parklot ()
 		{
 			var park = new Parklot (1);
-			var boy = new ParkBoy (park);
+			var boy = new ParkBoy ();
+			boy.AddParkLot (park);
 			var manager = new ParkManager ();
 			manager.AddParkBoy (boy);
 			var director = new ParkDirector (manager);
@@ -44,8 +45,10 @@ namespace ParkProblem.UnitTest
 		{
 			var park1 = new Parklot (1);
 			var park2 = new Parklot (1);
-			var boy1 = new ParkBoy (park1);
-			var boy2 = new ParkBoy (park2);
+			var boy1 = new ParkBoy ();
+			var boy2 = new ParkBoy ();
+			boy1.AddParkLot (park1);
+			boy2.AddParkLot (park2);
 			var manager = new ParkManager ();
 			manager.AddParkBoy (boy1);
 			manager.AddParkBoy (boy2);
@@ -71,7 +74,8 @@ namespace ParkProblem.UnitTest
 		public void Should_print_log_success_when_manager_have_no_parkBoy_and_have_one_parklot ()
 		{ 
 			var park = new Parklot (1);
-			var manager = new ParkManager (park);
+			var manager = new ParkManager ();
+			manager.AddParkLot (park);
 			var director = new ParkDirector (manager);
 
 			Assert.AreEqual (director.Print (), "M 1 1\n\tP 1 1");
@@ -82,7 +86,8 @@ namespace ParkProblem.UnitTest
 		{ 
 			var park1 = new Parklot (1);
 			var park2 = new Parklot (1);
-			var manager = new ParkManager (new List<Parklot>{ park1, park2 });
+			var manager = new ParkManager ();
+			manager.AddParkLot (new List<Parklot>{ park1, park2 });
 			var director = new ParkDirector (manager);
 
 			Assert.AreEqual (director.Print (), "M 2 2\n\tP 1 1\n\tP 1 1");
@@ -93,8 +98,10 @@ namespace ParkProblem.UnitTest
 		{ 
 			var park1 = new Parklot (1);
 			var park2 = new Parklot (1);
-			var boy = new ParkBoy (park2);
-			var manager = new ParkManager (new List<Parklot>{ park1 });
+			var boy = new ParkBoy ();
+			boy.AddParkLot (park2);
+			var manager = new ParkManager ();
+			manager.AddParkLot (park1);
 			manager.AddParkBoy (boy);
 			var director = new ParkDirector (manager);
 
@@ -112,16 +119,19 @@ namespace ParkProblem.UnitTest
 			for (int i = 0; i < 3; i++) {
 				park2.ParkIn (new Car (i.ToString ()));
 			}
-			var boy1 = new ParkBoy (park2);
+			var boy1 = new ParkBoy ();
+			boy1.AddParkLot (park2);
 			var park3 = new Parklot (3);
 			for (int i = 0; i < 3; i++) {
 				park3.ParkIn (new Car ("b"));
 			}
 			var park4 = new Parklot (2);
 			park4.ParkIn (new Car ("a"));
-			var boy2 = new ParkBoy (new List<Parklot>{ park3, park4 });
+			var boy2 = new ParkBoy ();
+			boy2.AddParkLot (new List<Parklot>{ park3, park4 });
 
-			var manager = new ParkManager (new List<Parklot>{ park1 });
+			var manager = new ParkManager ();
+			manager.AddParkLot (park1);
 			manager.AddParkBoy (boy1);
 			manager.AddParkBoy (boy2);
 			var director = new ParkDirector (manager);
