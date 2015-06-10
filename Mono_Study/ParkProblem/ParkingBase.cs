@@ -118,7 +118,6 @@ namespace ParkProblem
 		#endregion
 
 		#region Private Method
-
 		/// <summary>
 		/// Gets the park info by parklot.
 		/// </summary>

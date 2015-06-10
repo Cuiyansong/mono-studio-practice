@@ -7,6 +7,16 @@ namespace ParkProblem
 	{
 		private List<ParkingBase> boys = new List<ParkingBase> ();
 
+		private List<IPrintable> printableList
+		{
+			get{
+				var list = new List<IPrintable> ();
+				list.AddRange (parklots);
+				list.AddRange (boys);
+				return list;
+			}
+		}
+
 		public ParkManager ()
 		{
 			base.CompareFunc = (x, y) => x.Capacity - 0;
@@ -44,13 +54,9 @@ namespace ParkProblem
 		public override string Print (string prefix)
 		{
 			string result = GetParkNum ();
-
-			foreach (IPrintable lot in parklots) {
-				result += "\n" + lot.Print ("\t");
-			}
-			
-			foreach (IPrintable boy in boys) {
-				result += "\n" + boy.Print ("\t");
+			 
+			foreach (var item in printableList) {
+				result += "\n" + item.Print ("\t");
 			}
 
 			return result;
@@ -75,7 +81,7 @@ namespace ParkProblem
 					carNum += boy.TotoalCars;
 					capacityNum += boy.TotoalCapacity;
 				}
-
+ 
 				return string.Format ("M {0} {1}", capacityNum - carNum, capacityNum);
 			}
 		}

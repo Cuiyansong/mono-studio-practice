@@ -104,7 +104,7 @@ namespace ParkProblem.UnitTest
 			manager.AddParkLot (park1);
 			manager.AddParkBoy (boy);
 			var director = new ParkDirector (manager);
-
+			Console.WriteLine (director.Print ());
 			Assert.AreEqual (director.Print (), "M 2 2\n\tP 1 1\n\tB 1 1\n\t\tP 1 1");
 		}
 
@@ -136,7 +136,6 @@ namespace ParkProblem.UnitTest
 			manager.AddParkBoy (boy2);
 			var director = new ParkDirector (manager);
 
-			Console.WriteLine (director.Print ());
 			Assert.AreEqual (director.Print (), "M 5 20\n\tP 2 10\n\tB 2 5\n\t\tP 2 5\n\tB 1 5\n\t\tP 0 3\n\t\tP 1 2");
 		}
 	}
