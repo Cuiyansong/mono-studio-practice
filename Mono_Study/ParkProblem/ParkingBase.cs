@@ -31,7 +31,7 @@ namespace ParkProblem
 		/// Gets the totoal cars.
 		/// </summary>
 		/// <value>The totoal cars.</value>
-		public virtual int TotoalCars {
+		public virtual int CarNum {
 			get {
 				int total = 0;
 				foreach (var item in parklots) {
@@ -45,7 +45,7 @@ namespace ParkProblem
 		/// Gets the totoal capacity.
 		/// </summary>
 		/// <value>The totoal capacity.</value>
-		public virtual int TotoalCapacity {
+		public virtual int Capacity {
 			get {
 				int total = 0;
 				foreach (var item in parklots) {

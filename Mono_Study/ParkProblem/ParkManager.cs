@@ -72,14 +72,9 @@ namespace ParkProblem
 				int carNum = 0;
 				int capacityNum = 0;
 
-				foreach (var lot in parklots) {
-					carNum += lot.CarNum;
-					capacityNum += lot.Capacity;
-				}
-
-				foreach (var boy in boys) {
-					carNum += boy.TotoalCars;
-					capacityNum += boy.TotoalCapacity;
+				foreach (var item in printableList) {
+					carNum += item.CarNum;
+					capacityNum += item.Capacity;
 				}
  
 				return string.Format ("M {0} {1}", capacityNum - carNum, capacityNum);
